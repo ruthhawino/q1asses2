@@ -126,3 +126,30 @@ println("Total value of ${product1.name}: $$totalValue1")
 println("Total value of ${product2.name}: $$totalValue2")
 println("Total value of ${product3.name}: $$totalValue3")
 
+
+
+
+//Number6
+
+class Student(val name: String, val age: Int, val grades: List<Int>) {
+
+    fun calculateAverageGrade(): Double {
+        if (grades.isEmpty()) {
+            return 0.0
+        }
+
+        val sum = grades.sum()
+        return sum.toDouble() / grades.size
+    }
+
+    fun displayStudentInfo() {
+        println("Name: $name")
+        println("Age: $age")
+        println("Grades: ${grades.joinToString(", ")}")
+    }
+
+    fun hasPassed(): Boolean {
+        val averageGrade = calculateAverageGrade()
+        return averageGrade >= 60
+    }
+}
